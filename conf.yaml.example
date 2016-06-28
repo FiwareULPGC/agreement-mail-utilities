@@ -1,0 +1,18 @@
+# Configuration for agreement mail sending:
+#
+# * <smtp_user> and <smtp_pass> are the credentials for the SMTP account
+#   from where the agreement mails will be sent.
+# * <smtp_host> is the URL for the SMTP server to send the email with.
+# * <subject> is the value that will appear in the field SUBJECT.
+# * <template> is the body of the email to be sent. You can add the special
+#   strings <name> <surname> and <token>, which will be sustituted with their 
+#   respective cell values from the input xlsx file.
+
+smtp_user: '<email_address>'   		# Example for Gmail: <username>@gmail.com
+smtp_pass: '<password>'
+smtp_host: '<smtp_server_url>' 		# Example for Gmail: smtp.gmail.com:587
+subject: 'Testing mail agreement'
+template: |
+          Hi <name> <surname>.<br/>
+          This is your token: <strong><token></strong>.<br/>
+          Please, use it in the form: http://example.es
