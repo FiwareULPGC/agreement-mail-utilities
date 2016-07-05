@@ -75,8 +75,8 @@ def send_confirmation_email(configurationpath, excelpath, resend=False):
                 sent_column = ws.cell(row=row_number, column=5).value
                 if resend or sent_column != 'Yes':
 
-                    msg = complete_msg(conf["template"], str(row[0].value),
-                                       str(row[1].value), str(row[3].value))
+                    msg = complete_msg(conf["template"], row[0].value,
+                                       row[1].value, row[3].value)
 
                     send_email(conf["smtp_host"], conf["smtp_user"],
                                conf["smtp_pass"], conf["subject"], to_address,
